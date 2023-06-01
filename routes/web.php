@@ -26,6 +26,7 @@ Route::post('/dropzone', 'HomeController@index')->name('file-upload');
 Route::middleware('auth')->group(function () {
     Route::resource('product-variant', 'VariantController');
     Route::resource('product', 'ProductController');
+    // Route::post('all_products_ajax', 'ProductController@all_products_ajax')->name('all_products.ajax');
     Route::resource('blog', 'BlogController');
     Route::resource('blog-category', 'BlogCategoryController');
 });

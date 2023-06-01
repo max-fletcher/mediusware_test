@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('styles')
 </head>
 {{--<body id="page-top">--}}
 
@@ -132,7 +134,7 @@
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+        aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -156,9 +158,11 @@
 
 <!-- Scripts -->
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> --}}
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script>Dropzone.autoDiscover = false;</script>
 @stack('page_js')
+@yield('scripts')
 </body>
 </html>

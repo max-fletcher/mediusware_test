@@ -13,9 +13,41 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('products.index');
+        $per_page = 2;
+
+        $products = Product::with([
+            'product_variant_prices.product_variant_one_belongs_to',
+            'product_variant_prices.product_variant_two_belongs_to',
+            'product_variant_prices.product_variant_three_belongs_to'
+        ])->paginate($per_page);
+
+        $all_products_count = Product::count();
+
+        $start_page = $request->page ? ((int)$request->page)-1 : 0;
+        $start_index = ($start_page*$per_page) + 1;
+        $end_index = ($start_page+1 == $products->lastPage()) ? $all_products_count : (($start_page+1)*$per_page);
+
+        // dd($start_page, $start_index, $end_index);
+
+        // $products = Product::with([
+        //         'product_variant_prices.product_variant_one',
+        //         'product_variant_prices.product_variant_two',
+        //         'product_variant_prices.product_variant_three'
+        //     ])->where('id', '=', 5)->first();
+
+        // dd($products);
+
+        // foreach ($products as $product){
+        //     foreach ($product->product_variant_prices as $prices){
+        //         dd($prices->product_variant_one_belongs_to->variant);
+        //     }
+        // }
+
+        // dd($products[0]);
+
+        return view('products.index', compact('products', 'all_products_count', 'start_index', 'end_index'));
     }
 
     /**
