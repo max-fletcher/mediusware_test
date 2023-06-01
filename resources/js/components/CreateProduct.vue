@@ -188,7 +188,6 @@ export default {
                 product_variant_prices: this.product_variant_prices
             }
 
-
             axios.post('/product', product).then(response => {
                 console.log(response.data);
             }).catch(error => {
@@ -197,7 +196,6 @@ export default {
 
             console.log(product);
         }
-
 
     },
     mounted() {

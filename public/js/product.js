@@ -60,7 +60,7 @@ function updateVariantPreview() {
                         <td>
                                         <input type="text" class="form-control" value="0" name="product_preview[${index}][stock]">
                                     </td>
-                      </tr>`;
+                        </tr>`;
     });
 
     $("#variant-previews").empty().append(tableBody);
@@ -144,3 +144,9 @@ function removeVariant(event, element) {
     updateVariantPreview();
 }
 
+$(document).ready(function () {
+    $(document).on('change', '#select2-option-0', function(){
+        // var element = $(this)
+        console.log('here');
+    })
+})

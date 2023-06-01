@@ -8,7 +8,7 @@
         <section>
             <div class="row">
                 <div class="col-md-6">
-                    <!--                    Product-->
+                    <!-- Product-->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">Product</h6>
@@ -17,26 +17,28 @@
                             <div class="form-group">
                                 <label for="product_name">Product Name</label>
                                 <input type="text"
-                                       name="product_name"
-                                       id="product_name"
-                                       required
-                                       placeholder="Product Name"
-                                       class="form-control">
+                                        name="product_name"
+                                        id="product_name"
+                                        required
+                                        placeholder="Product Name"
+                                        class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="product_sku">Product SKU</label>
                                 <input type="text" name="product_sku"
-                                       id="product_sku"
-                                       required
-                                       placeholder="Product Name"
-                                       class="form-control"></div>
+                                        id="product_sku"
+                                        required
+                                        placeholder="Product Name"
+                                        class="form-control">
+                            </div>
                             <div class="form-group mb-0">
                                 <label for="product_description">Description</label>
                                 <textarea name="product_description"
-                                          id="product_description"
-                                          required
-                                          rows="4"
-                                          class="form-control"></textarea>
+                                            id="product_description"
+                                            required
+                                            rows="4"
+                                            class="form-control">
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -55,7 +57,7 @@
                 <div class="col-md-6">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3"><h6
-                                class="m-0 font-weight-bold text-primary">Variants</h6>
+                            class="m-0 font-weight-bold text-primary">Variants</h6>
                         </div>
                         <div class="card-body pb-0" id="variant-sections">
                         </div>

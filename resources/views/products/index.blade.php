@@ -8,14 +8,30 @@
 
 
     <div class="card">
-        <form action="" method="get" class="card-header">
+        <form action="{{ Request::fullUrl() }}" method="get" class="card-header">
             <div class="form-row justify-content-between">
                 <div class="col-md-2">
                     <input type="text" name="title" placeholder="Product Title" class="form-control">
                 </div>
                 <div class="col-md-2">
                     <select name="variant" id="" class="form-control">
-
+                        <label for="id_label_single">
+                            <option selected disabled value="">--Select A Variant--</option>
+                            <optgroup label="Color">
+                                <option value="red">Red</option>
+                                <option value="black">Black</option>
+                                <option value="green">Green</option>
+                            </optgroup>
+                            <optgroup label="Size">
+                                <option value="xl">XL</option>
+                                <option value="l">XL</option>
+                                <option value="sm">SM</option>
+                            </optgroup>
+                            <optgroup label="Style">
+                                <option value="v-nick">V-nick</option>
+                                <option value="o-nick">O-nick</option>
+                            </optgroup>
+                        </label>
                     </select>
                 </div>
 
@@ -24,8 +40,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Price Range</span>
                         </div>
-                        <input type="text" name="price_from" aria-label="First name" placeholder="From" class="form-control">
-                        <input type="text" name="price_to" aria-label="Last name" placeholder="To" class="form-control">
+                        <input type="number" name="price_from" aria-label="First name" placeholder="From" class="form-control">
+                        <input type="number" name="price_to" aria-label="Last name" placeholder="To" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -96,7 +112,7 @@
                     <p>Showing {{ $start_index }} to {{ $end_index }} out of {{ $all_products_count }} </p>
                 </div>
                 <div class="col-md-2">
-                    {{ $products->links() }}
+                    {{ $products->withQueryString()->links() }}
                 </div>
             </div>
         </div>
